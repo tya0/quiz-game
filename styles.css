@@ -8,6 +8,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 body {
 	background-color:black;
 	font-family: 'Roboto', sans-serif;
+	position: relative;
 }
 
 h1 {
@@ -53,7 +54,7 @@ h1 {
 
 .board {
 	width:800px;
-	height:600px;
+	height:650px;
 	text-align:center;
 	background-image: url("images/chalkboard-green.jpg");
 	margin: 0 auto 50px auto;
@@ -114,11 +115,8 @@ h1 {
 }
 
 .answerWrap {
-	/*border: 1px solid white;*/
 	width:90%;
 	margin: 0 auto 30px;
-
-
 }
 
 .answer {
@@ -138,10 +136,6 @@ h1 {
 	margin:0;
 	font-size: 20px;
 }
-
-/*.answer:hover {
-	background-color: yellow;
-}*/
 
 .answerHover {
 	background-color:#0035FF;
@@ -193,118 +187,123 @@ h1 {
 	margin:5px;
 }
 
-/*.front, .back {
-    height: 50px !important;
-    width: 200px !important;
-    border: 1px solid black;
-    text-align: center;*/
+#peek, #copy {
+  height:50px;
+  position: relative;
+  perspective:500px;
+  width:100%;
+  margin:10px auto; 
+  border-radius: 10px;
+}
 
-    #peek, #copy {
-      height:50px;
-      position: relative;
-      perspective:500px;
-      width:100%;
-      margin:10px auto; 
-      border-radius: 10px;
-    }
+.front, .back {
+  position: absolute;
+  height:100%;
+  width:100%;
+  text-align: center;
+  transition:all 0.5s;
+  backface-visibility:hidden; 
+  border-radius: 10px;
+}
 
-    .front, .back {
-      /* some styling for each card */
-      position: absolute;
-      height:100%;
-      width:100%;
-      text-align: center;
-      transition:all 0.5s;
-      backface-visibility:hidden; /* This means that when it is flipped over, we don't see the back */
-      border-radius: 10px;
-    }
+.front {
+  background:#0035FF; 
+}
+.back {
+  background:#f1c40f; 
+  -webkit-transform:rotateY(180deg); 
+}
 
-    .front {
-      background:#0035FF; 
-    }
-    .back {
-      background:#f1c40f; 
-      -webkit-transform:rotateY(180deg); /* By Default set the back to be rotate */
-    }
-	
-	.frontHide {
-		display:none;
-		transition:all 1s;
-	}
+.frontHide {
+	display:none;
+	transition:all 1s;
+}
 
-   .cheatBack {
-      -webkit-transform:rotateY(0);
-    }
+.cheatBack {
+  -webkit-transform:rotateY(0);
+}
 
-    .cheatFront {
-      -webkit-transform:rotateY(-180deg);
-    }
+.cheatFront {
+  -webkit-transform:rotateY(-180deg);
+}
 
-	.usedCheat {
-		background-color: red;
-	}
+.usedCheat {
+	background-color: red;
+}
 
-	.usedFront {
-		-webkit-transform:rotateY(0);
-	}
+.usedFront {
+	-webkit-transform:rotateY(0);
+}
 
-	.usedBack {
-		-webkit-transform:rotateY(180deg);
-	}
+.usedBack {
+	-webkit-transform:rotateY(180deg);
+}
 
-	.quit p {
-		color:white;
-	}
+.quit p {
+	color:white;
+}
 
-	.next, .submit {
-		text-decoration: none;
-		/*font-family: 'Finger Paint', cursive;*/
-		font-size:18px;
-		border:1px solid white;
-		color:white;
-		padding:10px 30px;
-		border-radius: 10px;
-	}
+.next, .submit {
+	text-decoration: none;
+	font-size:18px;
+	border:1px solid white;
+	color:white;
+	padding:10px 30px;
+	border-radius: 10px;
+}
 
-	.submit {
-		margin-right:10px;
-	}
+.submit {
+	margin-right:10px;
+}
 
-	.next:hover, .submit:hover {
-		background-color: #0035FF;
-	}
-	
+.next:hover, .submit:hover {
+	background-color: #0035FF;
+}
 
+a {
+	text-decoration: none;
+	color: red;
+	padding: 10px;
+	font-size: 18px;
+}
 
-	a {
-		text-decoration: none;
-		color: red;
-		padding: 10px;
-		font-size: 18px;
-	}
+.replay:hover {
+	text-decoration: underline;
+}
 
-	.replay:hover {
-		text-decoration: underline;
-	}
-	
-	.how-to {
-		text-align: center;
-		font-family: 'Roboto', sans-serif;
-		line-height: 22px;
-		letter-spacing: 1px;
-		display: block;
-		left:30%;
-		top:5%;
-	}
-	.how-to p{
-		text-align: left;
-	}
+.how-to {
+	position: absolute;
+	width: 60%;
+	max-width: 800px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	line-height: 22px;
+	letter-spacing: 1px;
+	display: block;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%,-20%);
+}
 
+.how-to h1 {
+	font-family: 'Finger Paint', cursive;
+	color: red;
+	margin: 15px 0 35px 0;
+	line-height: 30px;
+}
 
-	.red {
-		color: red;
-	}
+.how-to p{
+	text-align: left;
+}
 
-	.green {
-		color: green;
-	}
+.how-to a:hover {
+	text-decoration: underline;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
