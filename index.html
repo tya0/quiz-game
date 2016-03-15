@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Are You Smarter than a 5th Grader?</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<div class="header-container">
+	
+		<img src="images/logoblk.jpg" class="logo" alt="logo">
+
+	</div>
+	<div class="container clearfix">
+
+		<div class="container-left">
+			<div class="cheats">
+				<h3>Cheats</h3>
+				<div class="cheat" id="peek">
+					<div class="front">
+						<p>PEEK</p>
+					</div>
+					<div class="back"></div>
+				</div>
+				<div class="cheat" id="copy">
+					<div class="front">
+						<p>COPY</p>
+					</div>
+					<div class="back"></div>
+				</div>
+			</div>
+			<div class="dropOut">
+				<h3>Quit</h3>
+				<div class="quitButton">
+					<p>DROP OUT</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="board clearfix">
+			<div class="timer"><p class="seconds"></p></div>
+			<div class="question"></div>
+			<div class="answerWrap clearfix">
+				<div class="answer answer1"></div>
+				<div class="answer answer2"></div>
+				<div class="answer answer3"></div>
+				<div class="answer answer4"></div>
+			</div>
+			<div class="buttons clearfix">
+				<a href="" class="submit button">SUBMIT</a>
+				<a href="" class="next button">NEXT</a>
+			</div>
+			<img src="images/apple.png" alt="apple" class="apple">
+		</div>
+		<div class="gameOver pop-up">
+			<h1>GAME OVER!</h1>
+			<h3>You are not smarter than a 5th grader!</h3>
+			<a href="#" class="replay">Play Again</a>
+		</div>
+		<div class="win pop-up">
+			<h1>CONGRATULATIONS!</h1>
+			<h3>You have won <span class="winnings">$1,000,000</span>!</h3>
+			<h3>You are just as smart as a 5th grader!</h3>
+			<a href="#" class="replay">Play Again</a>
+		</div>
+		<div class="quit pop-up">
+			<h1>Congratulations, you have won <span class="winnings"></span>!</h1>
+			<a href="#" class="replay">Play Again</a>
+		</div>
+		<div class="submitAnswer pop-up">
+			<h1>Please Submit an answer before clicking Next</h1>
+			<div class="closeSubmitAnswer"> X </div>
+		</div>
+		<div class="earnings">
+			<div class="earningsLevel level11">$1,000,000</div>
+			<div class="earningsLevel level10">$500,000</div>
+			<div class="earningsLevel level9">$300,000</div>
+			<div class="earningsLevel level8">$175,000</div>
+			<div class="earningsLevel level7">$100,000</div>
+			<div class="earningsLevel level6">$50,000</div>
+			<div class="earningsLevel level5">$25,000</div>
+			<div class="earningsLevel level4">$10,000</div>
+			<div class="earningsLevel level3">$5,000</div>
+			<div class="earningsLevel level2">$2,000</div>
+			<div class="earningsLevel level1">$1,000</div>
+		</div>
+		<div class="how-to pop-up">
+			<h1>How to Play</h1>
+			<p>You will have 30 seconds to answer the question on the board. Select an answer and click "Submit" to validate. Correct answers will turn <span class="green">green</span>. Click "Next" to continue. Incorrect answers will turn <span class="red">red</span>, and your game is over.</p>
+			<h2>Cheats</h2>
+			<p>The "Peek" will show you a possible answer, but you can decide whether you want to go with that answer. </p>
+			<p>The "Copy" will also show you an answer, however you are forced to take this answer as it will automatically be selected.</p>
+			<a href="#" class="begin">Let's Play!</a>
+		</div>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
