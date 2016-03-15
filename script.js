@@ -88,19 +88,19 @@ var sciQuestions = [
 app.gameOver = function(){
 	$(".gameOver").fadeIn();
 	app.disableButtons();
-}
+};
 
 app.replay = function(){
 	$(".replay").on("click", function(e){
 		e.preventDefault();
     	location.reload();
 	})
-}
+};
 
 app.win = function(){
 	$(".win").fadeIn();
 	app.disableButtons();
-}
+};
 
 app.countdown = function(){
 	seconds = 30;
@@ -121,12 +121,11 @@ app.countdown = function(){
 			// window.clearInterval(timer);
 			};
 	},1000)
-
-}
+};
 
 app.earnings = function(){
 	$(".level" + app.earningsCounter).addClass("currentLevel");
-}
+};
 
 app.game = function(){
 	// console.log(app.counter);
@@ -135,7 +134,7 @@ app.game = function(){
 	$("div.answer2").text(sciQuestions[app.counter].two);
 	$("div.answer3").text(sciQuestions[app.counter].three);
 	$("div.answer4").text(sciQuestions[app.counter].four);
-}
+};
 
 app.cheat = function(){
 	app.cheatAnswer = "";
@@ -150,7 +149,7 @@ app.cheat = function(){
 	} else {
 		app.cheatAnswer = sciQuestions[app.counter].four;
 	}
-}
+};
 
 app.peek = function(){
 	app.cheat();
@@ -160,8 +159,8 @@ app.peek = function(){
 	$("#peek").on("click", function(){
 		$("#peek .front").addClass("cheatFront");
 		$("#peek .back").addClass("cheatBack");
-	});
-}
+	})
+};
 
 app.copy = function(){
 	app.cheat();
@@ -182,24 +181,24 @@ app.copy = function(){
 			$("div.answer4").addClass("userAnswer");
 		}
 		$("div.answer").off("click");
-	});
-}
+	})
+};
 
 app.usedPeek = function(){
 	if ($("#peek .back").hasClass("cheatBack")){
 		$("#peek .front").removeClass("cheatFront").addClass("usedCheat");
 		$("#peek .back").removeClass("cheatBack");
 		$("#peek").off("click");
-	};
-}
+	}
+};
 
 app.usedCopy = function() {
 	if ($("#copy .back").hasClass("cheatBack")){
 		$("#copy .front").removeClass("cheatFront").addClass("usedCheat");
 		$("#copy .back").removeClass("cheatBack");
 		$("#copy").off("click");
-	};
-}
+	}
+};
 
 app.quit = function(){
 	$(".quitButton").on("click", function(){
@@ -217,8 +216,8 @@ app.quit = function(){
 		$(".quit").fadeIn();
 		app.disableButtons();
 		}
-	});
-}
+	})
+};
 
 app.answerHover = function(){
 	$("div.answer") 
@@ -230,8 +229,8 @@ app.answerHover = function(){
 	})
 	.mouseleave(function(){
 		$(this).removeClass("answerHover");
-	});
-}
+	})
+};
 
 app.userAnswer = function(){
 	$("div.answer").on("click", function(){
@@ -240,7 +239,7 @@ app.userAnswer = function(){
 			$(this).removeClass("answerHover");
 		}
 	});
-}
+};
 
 app.submitAnswer = function(){
 	$("a.submit").on("click", function(event){
@@ -259,10 +258,9 @@ app.submitAnswer = function(){
 			$("div.userAnswer").addClass("wrongAnswer");
 			app.gameOver();
 			window.clearInterval(timer);
-		};
-
-	})	
-}
+		}
+	});	
+};
 
 app.nextQuestion = function(){
 	$("a.next").on("click", function(event){
@@ -290,20 +288,20 @@ app.nextQuestion = function(){
 			seconds=30;
 			app.countdown(seconds);
 		} else {
-			app.submitError();
+			alert("Please submit an answer first");
 		}
-	})
-}
+	});
+};
 
-app.submitError = function(){
-	// $(".submitAnswer").fadeIn();
-	$(".submitAnswer").addClass("show")
-	$(".closeSubmitAnswer").on("click", function(){
-		// $(".submitAnswer").fadeOut();
-		$(".submitAnswer").removeClass("show")
-		app.userAnswer();
-	})
-}
+// app.submitError = function(){
+// 	$(".submitAnswer").fadeIn();
+// 	$(".submitAnswer").addClass("show")
+// 	$(".closeSubmitAnswer").on("click", function(){
+// 		// $(".submitAnswer").fadeOut();
+// 		$(".submitAnswer").removeClass("show")
+// 		app.userAnswer();
+// 	})
+// }
 
 app.disableButtons = function(){
 	$("div.answer").off("click");
@@ -318,7 +316,7 @@ app.disableButtons = function(){
 		return false;
 	});
 	window.clearInterval(timer);
-}
+};
 
 app.startGame = function() {
 	$(".begin").on("click", function(e){
@@ -337,11 +335,11 @@ app.startGame = function() {
 		app.game();
 		app.replay();
 	})
-}
+};
 
 app.init = function(){
 	app.startGame();
-}
+};
 
 $(function() { // begin document ready
 	app.init();	  
