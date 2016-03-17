@@ -29,8 +29,10 @@ h1 {
 
 .earnings {
  float: left;
- margin: 0 25px;
- width: 150px;
+ /*margin: 0 25px;*/
+ padding: 2%;
+ /*width: 150px;*/
+ width: 15%;
 }
 
 .earningsLevel {
@@ -53,7 +55,8 @@ h1 {
 }
 
 .board {
-	width:800px;
+	/*width:800px;*/
+	width: 70%;
 	height:650px;
 	text-align:center;
 	background-image: url("images/chalkboard-green.jpg");
@@ -66,7 +69,7 @@ h1 {
 .apple {
 	position:absolute;
 	width: 13%;
-	left: 675px;
+	left: 0;
 	bottom: -10px;}
 
 .pop-up {
@@ -157,8 +160,10 @@ h1 {
 .container-left {
 	color:white;
 	float:left;
-	width:150px;
-	margin: 25px;
+	/*width:150px;*/
+	width: 15%;
+	padding: 2%;
+	/*margin: 25px;*/
 	text-align: center;
 }
 
@@ -313,4 +318,14 @@ a {
 
 .green {
 	color: green;
+}
+
+
+@media (max-width: 940px) {
+	.how-to {
+		display: none;
+	}
+	.playOnDesktop {
+		display: block;
+	}
 }
